@@ -21,8 +21,13 @@ module.exports = {
     ],
     tsconfigRootDir: __dirname,
   },
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'simple-import-sort', 'import'],
   rules: {
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
+    'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
     //disable rule of space before function parentheses
     'space-before-function-paren': 0,
     'react-refresh/only-export-components': [
