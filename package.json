@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "yarn lint --fix",
-    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|tsx)\" --write"
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|tsx)\" --write",
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
     "react": "^18.2.0",
