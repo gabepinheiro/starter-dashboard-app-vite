@@ -2,7 +2,7 @@ import './App.css'
 
 import { useState } from 'react'
 
-import reactLogo from '@/assets/react.svg'
+import ReactLogo from './assets/react.svg?react'
 
 export function App() {
   const [count, setCount] = useState(0)
@@ -14,7 +14,8 @@ export function App() {
           <img src='/vite.svg' className='logo' alt='Vite logo' />
         </a>
         <a href='https://react.dev' target='_blank' rel='noreferrer'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
+          {/* <img src={reactLogo} className='logo react' alt='React logo' /> */}
+          <ReactLogo className='logo react' title='React Logo' />
         </a>
       </div>
       <h1>Vite + React</h1>
