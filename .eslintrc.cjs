@@ -13,7 +13,12 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    project: [
+      './tsconfig.json',
+      './tsconfig.node.json',
+      './commitlint.config.cjs',
+      './lint-staged.config.cjs',
+    ],
     tsconfigRootDir: __dirname,
   },
   plugins: ['react-refresh'],
