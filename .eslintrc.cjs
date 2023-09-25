@@ -18,6 +18,8 @@ module.exports = {
       './tsconfig.node.json',
       './commitlint.config.cjs',
       './lint-staged.config.cjs',
+      './postcss.config.cjs',
+      './tailwind.config.cjs',
     ],
     tsconfigRootDir: __dirname,
   },
