@@ -8,6 +8,7 @@ import {
   TeamSwitcher,
   UserNav,
 } from '@/components'
+import { ModeToggle } from '@/components/mode-toggle'
 import {
   Card,
   CardContent,
@@ -28,6 +29,7 @@ export default function Dashboard() {
             <div className='ml-auto flex items-center space-x-4'>
               <Search />
               <UserNav />
+              <ModeToggle />
             </div>
           </div>
         </div>
