@@ -19,10 +19,11 @@ module.exports = {
   },
   plugins: ['react-refresh', 'simple-import-sort', 'import'],
   rules: {
+    'react/no-unknown-property': 'off',
     'react/prop-types': 'off',
     '@typescript-eslint/naming-convention': [
       'error',
-      { selector: 'variable', format: ['camelCase'] },
+      { selector: 'variable', format: ['camelCase', 'PascalCase'] },
       { selector: 'function', format: ['camelCase', 'PascalCase'] },
     ],
     'simple-import-sort/imports': 'error',
