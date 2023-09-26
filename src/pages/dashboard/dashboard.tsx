@@ -16,44 +16,51 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 export default function Dashboard() {
   return (
     <>
-      <div className='flex-col md:flex'>
+      <div className='flex flex-col md:flex'>
         <div className='border-b'>
           <div className='flex h-16 items-center px-4'>
-            <TeamSwitcher />
-            <MainNav className='mx-6' />
-            <div className='ml-auto flex items-center space-x-4'>
+            <TeamSwitcher className='max-sm:hidden' />
+            <MainNav className='mx-6 max-sm:hidden' />
+            <div className='md:ml-auto flex items-center gap-4 max-sm:w-full'>
               <Search />
-              <UserNav />
+              <div className='ml-auto'>
+                <UserNav />
+              </div>
               <ModeToggle />
             </div>
           </div>
         </div>
-        <div className='flex-1 space-y-4 p-8 pt-6'>
-          <div className='flex items-center justify-between space-y-2'>
-            <h2 className='text-3xl font-bold tracking-tight'>Dashboard</h2>
-            <div className='flex items-center space-x-2'>
+        <div className='flex-1 space-y-4 p-6 pt-6'>
+          <div className='flex flex-col md:flex-row items-center justify-between space-y-2 mb-8 md:mb-0'>
+            <h2 className='text-3xl font-bold tracking-tight mb-6 md:mb-0'>
+              Dashboard
+            </h2>
+            <div className='flex flex-col md:flex-row items-center space-x-2 space-y-6 md:space-y-0'>
               <CalendarDateRangePicker />
               <Button>Download</Button>
             </div>
           </div>
           <Tabs defaultValue='overview' className='space-y-4'>
-            <TabsList>
-              <TabsTrigger value='overview'>Overview</TabsTrigger>
-              <TabsTrigger value='analytics' disabled>
-                Analytics
-              </TabsTrigger>
-              <TabsTrigger value='reports' disabled>
-                Reports
-              </TabsTrigger>
-              <TabsTrigger value='notifications' disabled>
-                Notifications
-              </TabsTrigger>
-            </TabsList>
+            <ScrollArea className='h-[50px]'>
+              <TabsList>
+                <TabsTrigger value='overview'>Overview</TabsTrigger>
+                <TabsTrigger value='analytics' disabled className='snap-start'>
+                  Analytics
+                </TabsTrigger>
+                <TabsTrigger value='reports' disabled>
+                  Reports
+                </TabsTrigger>
+                <TabsTrigger value='notifications' disabled>
+                  Notifications
+                </TabsTrigger>
+              </TabsList>
+            </ScrollArea>
             <TabsContent value='overview' className='space-y-4'>
               <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-4'>
                 <Card>
@@ -158,7 +165,7 @@ export default function Dashboard() {
                   </CardContent>
                 </Card>
               </div>
-              <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-7'>
+              <div className='space-y-4 md:space-y-0 md:grid md:gap-4 md:grid-cols-2 lg:grid-cols-7'>
                 <Card className='col-span-4'>
                   <CardHeader>
                     <CardTitle>Overview</CardTitle>
