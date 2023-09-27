@@ -1,5 +1,6 @@
 export * from './date-ranger-picker'
 export * from './main-nav'
+export * from './mobile-nav'
 export * from './overview'
 export * from './recent-sales'
 export * from './search'

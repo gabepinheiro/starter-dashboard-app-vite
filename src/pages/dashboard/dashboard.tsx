@@ -2,6 +2,7 @@ import {
   Button,
   CalendarDateRangePicker,
   MainNav,
+  MobileNav,
   Overview,
   RecentSales,
   Search,
@@ -25,6 +26,7 @@ export default function Dashboard() {
       <div className='flex flex-col md:flex'>
         <div className='border-b'>
           <div className='flex h-16 items-center px-4'>
+            <MobileNav />
             <TeamSwitcher className='max-sm:hidden' />
             <MainNav className='mx-6 max-sm:hidden' />
             <div className='md:ml-auto flex items-center gap-4 max-sm:w-full'>
