@@ -1,3 +1,4 @@
+import 'nprogress/nprogress.css'
 import './global.css'
 
 import React from 'react'

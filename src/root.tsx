@@ -1,13 +1,13 @@
 import { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-import { ThemeProvider } from '@/components'
+import { NProgressLoading, ThemeProvider } from '@/components'
 import { AuthenticationPage, DashboardPage } from '@/pages'
 
 export function Root() {
   return (
     <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<NProgressLoading />}>
         <Routes>
           <Route index path='/' element={<DashboardPage />} />
           <Route path='/auth' element={<AuthenticationPage />} />
