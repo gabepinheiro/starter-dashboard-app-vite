@@ -1,18 +1,25 @@
 import { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-import { NProgressLoading, ThemeProvider } from '@/components'
+import { NProgressLoading } from '@/components'
 import { AuthenticationPage, DashboardPage } from '@/pages'
+
+import { ProtectedRoutes } from './components/protected-routes'
 
 export function Root() {
   return (
-    <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
-      <Suspense fallback={<NProgressLoading />}>
-        <Routes>
-          <Route index path='/' element={<DashboardPage />} />
-          <Route path='/auth' element={<AuthenticationPage />} />
-        </Routes>
-      </Suspense>
-    </ThemeProvider>
+    <Suspense fallback={<NProgressLoading />}>
+      <Routes>
+        {/* Start::PublicRoutes */}
+        <Route path='/auth' element={<AuthenticationPage />} />
+        {/* End::PublicRoutes */}
+
+        {/* Start::ProtectedRoutes */}
+        <Route element={<ProtectedRoutes />}>
+          <Route index element={<DashboardPage />} />
+        </Route>
+        {/* End::ProtectedRoutes */}
+      </Routes>
+    </Suspense>
   )
 }

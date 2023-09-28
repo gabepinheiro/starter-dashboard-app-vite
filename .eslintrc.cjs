@@ -19,6 +19,8 @@ module.exports = {
   },
   plugins: ['react-refresh', 'simple-import-sort', 'import'],
   rules: {
+    'no-void': 0,
+    '@typescript-eslint/no-floating-promises': 'off',
     'react/no-unknown-property': 'off',
     'react/prop-types': 'off',
     '@typescript-eslint/naming-convention': [

@@ -2,27 +2,38 @@ import * as React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Button, Icons, Input, Label } from '@/components'
+import { useAuth } from '@/hooks'
 import { cn } from '@/lib/utils'
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
+  const { login } = useAuth()
   const navigate = useNavigate()
 
-  function onSubmit(event: React.SyntheticEvent) {
+  async function handleSubmit(event: React.SyntheticEvent) {
     event.preventDefault()
-    setIsLoading(true)
 
-    setTimeout(() => {
-      setIsLoading(false)
-      navigate('/')
-    }, 3000)
+    setIsLoading(true)
+    await new Promise(resolve => setTimeout(() => resolve(true), 2000))
+    setIsLoading(false)
+
+    // Example
+    login({
+      user: {
+        username: 'John Doe',
+        email: 'john.doe@mail.com',
+      },
+      token: 'myToken',
+    })
+
+    return navigate('/', { replace: true })
   }
 
   return (
     <div className={cn('grid gap-6', className)} {...props}>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={event => void handleSubmit(event)}>
         <div className='grid gap-2'>
           <div className='grid gap-1'>
             <Label className='sr-only' htmlFor='email'>
