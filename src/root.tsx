@@ -5,6 +5,7 @@ import { NProgressLoading } from '@/components'
 import { AuthenticationPage, DashboardPage } from '@/pages'
 
 import { ProtectedRoutes } from './components/protected-routes'
+import { Dashboard2 } from './pages/dashboard/dashboard2'
 
 export function Root() {
   return (
@@ -16,7 +17,7 @@ export function Root() {
 
         {/* Start::ProtectedRoutes */}
         <Route element={<ProtectedRoutes />}>
-          <Route index element={<DashboardPage />} />
+          <Route index element={<Dashboard2 />} />
         </Route>
         {/* End::ProtectedRoutes */}
       </Routes>
