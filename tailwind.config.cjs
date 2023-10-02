@@ -22,7 +22,7 @@ module.exports = {
 
       'primary-light': {
         1: 'hsl(var(--primary-light-1))',
-        2: 'hsl(var(--pruimary-light-2))',
+        2: 'hsl(var(--primary-light-2))',
       },
       primary: {
         DEFAULT: 'hsl(var(--primary))',
