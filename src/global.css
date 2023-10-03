@@ -130,7 +130,7 @@
   }
 
   .dark {
-    --background: 255, 36%, 9%;
+    --background: 255 36% 9%;
     --foreground: 0 0% 98%;
 
     --card: 255 36% 9%;
@@ -155,7 +155,7 @@
     --destructive-foreground: 0 0% 98%;
 
     --border: 258 37% 15%;
-    --input: 258 37% 15%;
+    --input: 255 36% 9%;
     --ring: 258 37% 50%;
   }
 }
