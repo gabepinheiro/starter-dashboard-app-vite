@@ -17,30 +17,38 @@ export function Sidebar({ children }: SidebarProps) {
   const [expanded, setExpanded] = useState(true)
 
   return (
-    <aside className='h-screen'>
+    <aside className='h-[calc(100vh_-_72px)]'>
       <nav className='h-full flex flex-col  border-r shadow-sm'>
         <div className='p-4 pb-2 flex justify-between items-center'>
           {/* Logo */}
-          <div
-            className={`flex items-center text-lg font-medium overflow-hidden transition-all ${
-              expanded ? 'w-32' : 'w-0 scale-0'
-            }
-            `}
+          {/* <div */}
+          {/*   className={`flex items-center text-lg font-medium overflow-hidden transition-all ${ */}
+          {/*     expanded ? 'w-32' : 'w-0 scale-0' */}
+          {/*   } */}
+          {/*   `} */}
+          {/* > */}
+          {/*   <svg */}
+          {/*     xmlns='http://www.w3.org/2000/svg' */}
+          {/*     viewBox='0 0 24 24' */}
+          {/*     fill='none' */}
+          {/*     stroke='currentColor' */}
+          {/*     strokeWidth='2' */}
+          {/*     strokeLinecap='round' */}
+          {/*     strokeLinejoin='round' */}
+          {/*     className='mr-2 h-4 w-4' */}
+          {/*   > */}
+          {/*     <path d='M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3' /> */}
+          {/*   </svg> */}
+          {/*   Acme Inc */}
+          {/* </div> */}
+
+          <p
+            className={` overflow-hidden transition-all ${
+              expanded ? 'scale-100' : 'w-0 scale-0 none'
+            } `}
           >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              viewBox='0 0 24 24'
-              fill='none'
-              stroke='currentColor'
-              strokeWidth='2'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              className='mr-2 h-4 w-4'
-            >
-              <path d='M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3' />
-            </svg>
-            Acme Inc
-          </div>
+            Menu
+          </p>
 
           <Button
             size='sm'
@@ -57,31 +65,30 @@ export function Sidebar({ children }: SidebarProps) {
         </div>
 
         <SidebarContext.Provider value={{ expanded }}>
-          <ul className='flex-1 px-3 mt-4'>{children}</ul>
+          <ul className='flex-1 px-3 flex flex-col'>{children}</ul>
         </SidebarContext.Provider>
 
-        <div className='border-t flex p-3 items-center'>
-          <img
-            src='https://ui-avatars.com/api/?background=EBE2FA&color=3730a3&bold=true'
-            alt=''
-            className='w-10 h-10 rounded-md'
-          />
-
-          <div
-            className={`
-                flex justify-between items-center overflow-hidden transition-all duration-300
-            ${expanded ? 'w-52 ml-3' : 'w-0 ml-0'}
-            `}
-          >
-            <div className='leading-4'>
-              <h4 className='font-semibold'>John Doe</h4>
-              <span className='text-xs text-neutral-600'>
-                johndoe@email.com
-              </span>
-            </div>
-            <MoreVerticalIcon />
-          </div>
-        </div>
+        {/* <div className='border-t flex p-3 items-center'> */}
+        {/*   <img */}
+        {/*     src='https://ui-avatars.com/api/?background=EBE2FA&color=3730a3&bold=true' */}
+        {/*     alt='' */}
+        {/*     className='w-10 h-10 rounded-md' */}
+        {/*   /> */}
+        {/* <div */}
+        {/*   className={` */}
+        {/*       flex justify-between items-center overflow-hidden transition-all duration-300 */}
+        {/*   ${expanded ? 'w-52 ml-3' : 'w-0 ml-0'} */}
+        {/*   `} */}
+        {/* > */}
+        {/*   <div className='leading-4'> */}
+        {/*     <h4 className='font-semibold'>John Doe</h4> */}
+        {/*     <span className='text-xs text-neutral-600'> */}
+        {/*       johndoe@email.com */}
+        {/*     </span> */}
+        {/*   </div> */}
+        {/*   <MoreVerticalIcon /> */}
+        {/* </div> */}
+        {/* </div> */}
       </nav>
     </aside>
   )
