@@ -1,4 +1,13 @@
-import { DashboardIcon, PersonIcon } from '@radix-ui/react-icons'
+import {
+  BadgeDollarSign as Billings,
+  BadgeInfo,
+  BarChart4 as Statistics,
+  Box,
+  FileCog,
+  LayoutDashboard as Dashboard,
+  Settings,
+  Users,
+} from 'lucide-react'
 
 import { CalendarDateRangePicker } from '@/components/date-ranger-picker'
 import { Overview } from '@/components/overview'
@@ -19,15 +28,15 @@ export function Dashboard2() {
   return (
     <div className='flex'>
       <Sidebar>
-        <SidebarItem icon={<DashboardIcon />} text='Dashboard' alert />
-        <SidebarItem icon={<DashboardIcon />} text='Statistics' active />
-        <SidebarItem icon={<PersonIcon />} text='Users' />
-        <SidebarItem icon={<DashboardIcon />} text='Inventory' />
-        <SidebarItem icon={<DashboardIcon />} text='Orders' />
-        <SidebarItem icon={<DashboardIcon />} text='Billings' />
+        <SidebarItem icon={<Dashboard />} text='Dashboard' alert />
+        <SidebarItem icon={<Statistics />} text='Statistics' active />
+        <SidebarItem icon={<Users />} text='Users' />
+        <SidebarItem icon={<Box />} text='Inventory' />
+        <SidebarItem icon={<FileCog />} text='Orders' />
+        <SidebarItem icon={<Billings />} text='Billings' />
         <hr className='my-3' />
-        <SidebarItem icon={<DashboardIcon />} text='Settings' />
-        <SidebarItem icon={<DashboardIcon />} text='Help' />
+        <SidebarItem icon={<Settings />} text='Settings' />
+        <SidebarItem icon={<BadgeInfo />} text='Help' />
       </Sidebar>
 
       <main className='flex-1'>

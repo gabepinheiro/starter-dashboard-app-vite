@@ -1,5 +1,5 @@
-import { CalendarIcon } from '@radix-ui/react-icons'
 import { addDays, format } from 'date-fns'
+import { CalendarDays as CalendarIcon } from 'lucide-react'
 import * as React from 'react'
 import { DateRange } from 'react-day-picker'
 

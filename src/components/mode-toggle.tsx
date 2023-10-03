@@ -1,4 +1,4 @@
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
+import { MoonStar as MoonIcon, SunIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import {

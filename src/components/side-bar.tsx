@@ -1,8 +1,4 @@
-import {
-  DotsVerticalIcon,
-  DoubleArrowLeftIcon,
-  DoubleArrowRightIcon,
-} from '@radix-ui/react-icons'
+import { ChevronsLeft, ChevronsRight, MoreVerticalIcon } from 'lucide-react'
 import { createContext, ReactNode, useContext, useState } from 'react'
 
 import { Button } from '@/components/ui/button'
@@ -48,13 +44,14 @@ export function Sidebar({ children }: SidebarProps) {
 
           <Button
             size='sm'
+            variant='outline'
             className={`rounded-lg ml-auto`}
             onClick={() => setExpanded(state => !state)}
           >
             {expanded ? (
-              <DoubleArrowLeftIcon className='font-bold' />
+              <ChevronsLeft className='font-bold' />
             ) : (
-              <DoubleArrowRightIcon className='font-bold' />
+              <ChevronsRight className='font-bold' />
             )}
           </Button>
         </div>
@@ -82,7 +79,7 @@ export function Sidebar({ children }: SidebarProps) {
                 johndoe@email.com
               </span>
             </div>
-            <DotsVerticalIcon />
+            <MoreVerticalIcon />
           </div>
         </div>
       </nav>
@@ -104,7 +101,7 @@ export function SidebarItem({ icon, text, active, alert }: SidebarItemProps) {
     <li
       className={`
         relative flex justify-center items-center py-2 px-3 my-2
-        font-medium rounded-md cursor-pointer transition-colors group
+        text-sm font-medium rounded-md cursor-pointer transition-colors group
         ${
           active
             ? 'bg-accent text-primary'
