@@ -1,15 +1,9 @@
 import {
   Button,
   CalendarDateRangePicker,
-  MainNav,
-  MobileNav,
   Overview,
   RecentSales,
-  Search,
-  TeamSwitcher,
-  UserNav,
 } from '@/components'
-import { ModeToggle } from '@/components/mode-toggle'
 import {
   Card,
   CardContent,
@@ -24,20 +18,6 @@ export default function Dashboard() {
   return (
     <>
       <div className='flex flex-col md:flex'>
-        <div className='border-b'>
-          <div className='flex h-16 items-center px-4'>
-            <MobileNav />
-            <TeamSwitcher className='max-sm:hidden' />
-            <MainNav className='mx-6 max-sm:hidden' />
-            <div className='md:ml-auto flex items-center gap-4 max-sm:w-full'>
-              <Search />
-              <div className='ml-auto'>
-                <UserNav />
-              </div>
-              <ModeToggle />
-            </div>
-          </div>
-        </div>
         <div className='flex-1 space-y-4 p-6 pt-6'>
           <div className='flex flex-col md:flex-row items-center justify-between space-y-2 mb-8 md:mb-0'>
             <h2 className='text-3xl font-bold tracking-tight mb-6 md:mb-0'>
