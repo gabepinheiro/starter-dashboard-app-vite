@@ -41,16 +41,16 @@ export function MobileNav() {
         </MobileLink>
         <ScrollArea className='my-4 h-[calc(100vh-8rem)] pb-10 pl-6'>
           <div className='flex flex-col space-y-3'>
-            <MobileLink key='overview' to='/overview' onOpenChange={setOpen}>
+            <MobileLink key='overview' to='/' onOpenChange={setOpen}>
               Overview
             </MobileLink>
-            <MobileLink key='customers' to='/customers' onOpenChange={setOpen}>
-              Customers
+            <MobileLink key='tasks' to='/tasks' onOpenChange={setOpen}>
+              Tasks
             </MobileLink>
-            <MobileLink key='products' to='/products' onOpenChange={setOpen}>
+            <MobileLink key='products' to='/' onOpenChange={setOpen}>
               Products
             </MobileLink>
-            <MobileLink key='settings' to='/settings' onOpenChange={setOpen}>
+            <MobileLink key='settings' to='/' onOpenChange={setOpen}>
               Products
             </MobileLink>
           </div>
